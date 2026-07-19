@@ -10,7 +10,8 @@ public class Funcionario extends Pessoa{
 
     @Override
     public void exibirTipo() {
-        //
+        System.out.println("Funcionário");
+
     }
 
     public double getSalario() {
