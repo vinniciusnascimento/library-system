@@ -1,5 +1,7 @@
 package domain.interfaces;
 
+import domain.pessoa.Cliente;
+
 public interface Emprestavel {
-    void emprestar();
+    void emprestar(Cliente cliente);
 }

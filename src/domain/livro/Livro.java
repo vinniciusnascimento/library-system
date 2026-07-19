@@ -1,6 +1,7 @@
 package domain.livro;
 
 import domain.interfaces.Emprestavel;
+import domain.pessoa.Cliente;
 
 public class Livro implements Emprestavel {
     private String titulo;
@@ -14,11 +15,14 @@ public class Livro implements Emprestavel {
     }
 
     @Override
-    public void emprestar() {
+    public void emprestar(Cliente cliente) {
         if (this.emprestado){
             throw new RuntimeException("Livro já está emprestado.");
         } else{
+            cliente.setLivro(this);
+            cliente.setLivrosEmprestados(cliente.getLivrosEmprestados() + 1);
             this.emprestado = true;
+            System.out.println("Livro emprestado com sucesso.");
         }
     }
 }
