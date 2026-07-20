@@ -14,8 +14,13 @@ public class Livro implements Emprestavel {
         this.emprestado = false;
     }
 
+    /**
+     *
+     * @param cliente (Not Null)
+     * @throws RuntimeException Se o Livro ja estiver emprestado
+     */
     @Override
-    public void emprestar(Cliente cliente) {
+    public void emprestar(Cliente cliente) throws RuntimeException {
         if (this.emprestado){
             throw new RuntimeException("Livro já está emprestado.");
         } else{
